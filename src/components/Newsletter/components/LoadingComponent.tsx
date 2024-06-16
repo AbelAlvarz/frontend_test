@@ -12,7 +12,7 @@ const LoadingComponent = ({ message, handler }: Props) => {
         <div className="absolute bg-black/70 bg-opacity-75 w-full h-full top-0 left-0 rounded-lg  flex justify-center items-center">
             {
                 message ? (
-                    <h1 className='text-white text-2xl text-center'>{message}</h1>
+                    <h1 className='text-white text-bold text-2xl text-center'>{message}</h1>
                 ) : (
                     <ClipLoader color="#4A90E2" size={50} />
                 )

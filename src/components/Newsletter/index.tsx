@@ -5,7 +5,7 @@ import { confirmSubscribtion } from '@/store/slice';
 import NewsLetterComponent from './components/NewsLetterComponent';
 
 const NewLetter = () => {
-    
+
     const isSubscribed = useSelector((state: any) => state.subscription.isSubscribed)
     const dispatch = useDispatch()
 
@@ -39,7 +39,7 @@ const NewLetter = () => {
 
         if (!cancelRef.current) {
             dispatch(confirmSubscribtion());
-            setSuccessMessage('Subscription confirmed successfully!');
+            setSuccessMessage(`Welcome to our NewsLetter ${email}`);
         }
     }
 
