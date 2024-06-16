@@ -2,9 +2,12 @@
 ***
 Application created to show technical skills, developing frontend web applications.
 Its main porpuse is show a NewsLetter subscriber, you can enter you email and you will be subscribed
-As this is a test application unfortunaly you will not get a welcome email, and the same time
-this is going to show the newsLetter subscriber Modal every time you refresh your page, I using redux
-to manage the page status just while you are navigating on the page.
+As this is a test application unfortunaly you will not get a welcome email.
+
+# IMPORTANT
+When you enter an email, and you subscribed, you will not get longer the Subscribe modal, due to you already are subscribed.
+If you want to prove other scenarios, don't add a valid email that includes '@''.' otherwise you should delete all the
+cache data to restart the subscription status.
 
 ### Test Application Online
 *** 

@@ -20,7 +20,7 @@ const NewsLetterComponent = ({ isVisible, loading, setIsVisible, handleEmpties, 
     const dispatch = useDispatch()
 
     const handleDismissSubscription = () => {
-        dispatch(dismissSubscription())
+        dispatch(dismissSubscription(false))
         setIsVisible(false)
 
     }

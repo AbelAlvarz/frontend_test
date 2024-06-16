@@ -1,22 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { getItem, setItem } from './localstorage'
 
 interface SubscriptionState {
     isSubscribed: null | boolean
 }
 
-const initialState: SubscriptionState = {
-    isSubscribed: null,
-}
+const initialState: SubscriptionState = getItem('isSubscribed') || null
 
 export const subcriptionSlice = createSlice({
     name: 'NewLetterSubscription',
-    initialState,
+    initialState: initialState,
     reducers: {
-        confirmSubscribtion: (state) => {
-            state.isSubscribed = true
+        confirmSubscribtion: (state, action) => {
+            setItem('isSubscribed', action.payload)
         },
-        dismissSubscription: (state) => {
-            state.isSubscribed = false
+        dismissSubscription: (state, action) => {
+            setItem('isSubscribed', action.payload)
         }
     }
 })

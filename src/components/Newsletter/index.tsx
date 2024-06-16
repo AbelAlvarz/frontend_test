@@ -1,21 +1,28 @@
 'use client'
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { confirmSubscribtion } from '@/store/slice';
 import NewsLetterComponent from './components/NewsLetterComponent';
 
 const NewLetter = () => {
 
-    const isSubscribed = useSelector((state: any) => state.subscription.isSubscribed)
+    const isSubscribed = useSelector((state: any) => state.subscription)
     const dispatch = useDispatch()
 
-    const [isVisible, setIsVisible] = useState(!isSubscribed);
+    console.log(!isSubscribed)
+    const [isVisible, setIsVisible] = useState(true);
     const [loading, setLoading] = useState(false);
     const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
     const [successMessage, setSuccessMessage] = useState('');
 
     const cancelRef = useRef(false);
+
+    useEffect(() => {
+        if (isSubscribed) {
+            setIsVisible(false)
+        }
+    }, [])
 
     const handleEmpties = (e: any) => {
         e.preventDefault();
@@ -38,7 +45,7 @@ const NewLetter = () => {
         });
 
         if (!cancelRef.current) {
-            dispatch(confirmSubscribtion());
+            dispatch(confirmSubscribtion(true));
             setSuccessMessage(`Welcome to our NewsLetter ${email}`);
         }
     }
@@ -62,6 +69,7 @@ const NewLetter = () => {
             setEmail={setEmail}
             successMessage={successMessage}
         />
+
     )
 }
 
