@@ -38,7 +38,7 @@
     z-Index:1;
     font-weight: bold;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #ccc;
+    color: #000;
 }
 .activeButton:hover{
     background-color: rgba(12, 136, 113, 0.829)
