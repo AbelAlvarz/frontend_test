@@ -10,7 +10,6 @@ const NewLetter = () => {
     const isSubscribed = useSelector((state: any) => state.subscription)
     const dispatch = useDispatch()
 
-    console.log(!isSubscribed)
     const [isVisible, setIsVisible] = useState(true);
     const [loading, setLoading] = useState(false);
     const [email, setEmail] = useState('')

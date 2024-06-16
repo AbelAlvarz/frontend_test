@@ -37,7 +37,7 @@ Make sure your have git installed.
     command: 
     npm install
 
-5. Please include a file .env.local and add the next VARIABLES
+5. Please include a file .env and add the next VARIABLES
     EMAIL=youremail@gmail.com
     EMAIL_PASS=yourpassword
 

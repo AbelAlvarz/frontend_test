@@ -33,7 +33,7 @@ const CarouselComponent = ({ images, goToImage, displayedImages, selectNewImage 
                                 alt='image'
                             />
                             <div className="w-full md:h-1/2 p-2 flex flex-col justify relative mb-5">
-                                <h1 className='font-bold text-lg'>{img.title}</h1>
+                                <h1 className='font-bold text-lg '>{img.title}</h1>
                                 <p className='overflow-auto custom-scroll '>{img.description}</p>
                             </div>
                         </div>

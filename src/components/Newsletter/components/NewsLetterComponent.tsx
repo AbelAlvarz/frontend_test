@@ -32,8 +32,8 @@ const NewsLetterComponent = ({ isVisible, loading, setIsVisible, handleEmpties, 
 
                         {loading && (<LoadingComponent message={successMessage} handler={handleStopPetition} />)}
                         <EnvelopImage />
-                        <h1 className="text-2xl font-bold mb-2 md:text-center">Subscribe to our Newsletter</h1>
-                        <p className="mb-4 md:text-center">Subscribe to our newsletter so we can spam you with our most recent offers and discounts.</p>
+                        <h1 className="text-2xl font-bold mb-2 md:text-center ">Subscribe to our Newsletter</h1>
+                        <p className="mb-4 md:text-center ">Subscribe to our newsletter so we can spam you with our most recent offers and discounts.</p>
 
                         <form onSubmit={(e) => handleEmpties(e)} className="space-y-4">
                             {message && <small className="text-red-500">{message}</small>}
