@@ -14,7 +14,10 @@ const NewLetter = () => {
     const [loading, setLoading] = useState(false);
     const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
-    const [successMessage, setSuccessMessage] = useState('');
+    const [responseMessage, setResponseMessage] = useState({
+        success: false,
+        message: ''
+    });
 
     const cancelRef = useRef(false);
 
@@ -41,14 +44,17 @@ const NewLetter = () => {
 
         if (!cancelRef.current && response.ok) {
             dispatch(confirmSubscribtion(true));
-            setSuccessMessage(`Welcome to our NewsLetter ${email}`);
+            setResponseMessage({ success: true, message: `Welcome to our NewsLetter ${email}` });
+        }
+        if (!response.ok) {
+            setResponseMessage({ success: false, message: `We're sorry :(. There's an error now, try later.` });
         }
     }
 
     const handleStopPetition = () => {
         cancelRef.current = true
         setLoading(false)
-        if (successMessage) {
+        if (responseMessage.success) {
             setIsVisible(false)
         }
     }
@@ -62,7 +68,7 @@ const NewLetter = () => {
             handleStopPetition={handleStopPetition}
             message={message}
             setEmail={setEmail}
-            successMessage={successMessage}
+            responseMessage={responseMessage}
         />
 
     )

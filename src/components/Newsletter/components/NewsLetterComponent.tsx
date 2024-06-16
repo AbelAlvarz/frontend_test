@@ -14,9 +14,12 @@ interface Props {
     handleStopPetition: () => void;
     setEmail: (e: string) => void;
     message: string;
-    successMessage: string
+    responseMessage: {
+        success: boolean;
+        message: string
+    }
 }
-const NewsLetterComponent = ({ isVisible, loading, setIsVisible, handleEmpties, handleStopPetition, message, setEmail, successMessage }: Props) => {
+const NewsLetterComponent = ({ isVisible, loading, setIsVisible, handleEmpties, handleStopPetition, message, setEmail, responseMessage }: Props) => {
     const dispatch = useDispatch()
 
     const handleDismissSubscription = () => {
@@ -30,7 +33,7 @@ const NewsLetterComponent = ({ isVisible, loading, setIsVisible, handleEmpties, 
                 <div style={{ zIndex: 1000 }} className={` fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-75 `}>
                     <div style={{ zIndex: 1001 }} className="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full relative md:h-min h-[90vh] m-2">
 
-                        {loading && (<LoadingComponent message={successMessage} handler={handleStopPetition} />)}
+                        {loading && (<LoadingComponent responseMessage={responseMessage} handler={handleStopPetition} />)}
                         <EnvelopImage />
                         <h1 className="text-2xl font-bold mb-2 md:text-center ">Subscribe to our Newsletter</h1>
                         <p className="mb-4 md:text-center ">Subscribe to our newsletter so we can spam you with our most recent offers and discounts.</p>
