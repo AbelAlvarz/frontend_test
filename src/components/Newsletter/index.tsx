@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { confirmSubscribtion } from '@/store/slice';
 import NewsLetterComponent from './components/NewsLetterComponent';
+import { sendEmail } from '@/lib/api';
 
 const NewLetter = () => {
 
@@ -37,14 +38,9 @@ const NewLetter = () => {
     const handleSubmit = async () => {
         setLoading(true)
         cancelRef.current = false
-        await new Promise<void>((resolve) => {
-            setTimeout(() => {
-                console.log('interval');
-                resolve();
-            }, 3000);
-        });
+        const response = await sendEmail({ email: email })
 
-        if (!cancelRef.current) {
+        if (!cancelRef.current && response.ok) {
             dispatch(confirmSubscribtion(true));
             setSuccessMessage(`Welcome to our NewsLetter ${email}`);
         }
