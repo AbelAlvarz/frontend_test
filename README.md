@@ -44,15 +44,15 @@ Make sure your have git installed and github account.
 
     need help with generate password? go to https://stackoverflow.com/questions/45478293/username-and-password-not-accepted-when-using-nodemailer 
 
-5 Make sure you have Docker installed and running
+6. Make sure you have Docker installed and running
 
     if not go to: https://docs.docker.com/engine/install/ to install it
 
-6. Create docker Image 
+7. Create docker Image 
     execute command: 
     docker build -t abel-alvarez-test .
 
-7. Once image was created 
+8. Once image was created 
     excute command:  
     docker run --env-file .env -p 3000:3000 abel-alvarez-test
 
@@ -61,8 +61,8 @@ Make sure your have git installed and github account.
     if variables are not added, you will get and error when you try to subscribe.
 
 
-8. Open Browser and go to http://localhost:3000
+9. Open Browser and go to http://localhost:3000
   
-9. If you have some issue or need support you can send an email to abelalvarezdev@gmail.com
+If you have some issue or need support you can send an email to abelalvarezdev@gmail.com
 
 ```
